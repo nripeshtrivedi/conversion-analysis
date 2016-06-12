@@ -1,0 +1,125 @@
+
+
+listner_id<-0
+count_activity1<-0
+count_activity2<-0
+count_activity3<-0
+count_activity4<-0
+count_activity5<-0
+count_activity6<-0
+count_activity7<-0
+count_activity8<-0
+count_activity9<-0
+date1<-0
+date2<-0
+date3<-0
+date4<-0
+date5<-0
+date6<-0
+date7<-0
+date8<-0
+date9<-0
+k<-0
+k1<-0
+k2<-0
+k3<-0
+k4<-0
+k5<-0
+k6<-0
+k7<-0
+k8<-0
+k9<-0
+actid1<-0
+actid2<-0
+actid3<-0
+actid4<-0
+actid5<-0
+actid6<-0
+actid7<-0
+actid8<-0
+actid9<-0
+z<-0
+actid<-0
+member_id<-0
+for(i in 1:length(listi))
+{
+member_id[i]<-newdata$number[listi[i]]
+}
+for( i in 1:length(member_id))
+{
+  print(i)
+  isin<-activity$actUserID %in% member_id[i]
+  s<-which(isin==TRUE)
+  for(j in 1:length(s))
+  {
+      z<-z+1
+      if(activity$action[s[j]]=='acctLogin')
+      {
+        count_activity1[k]<-activity$actCount[s[j]]
+        date1[k]<-activity$actDate[[s[j]]]
+        actid1[k]<-member_id[i]
+      k<-k+1
+      }
+      if(activity$action[s[j]]=='convMessage')
+      {
+        count_activity2[k1]<-activity$actCount[s[j]]
+      date2[k1]<-activity$actDate[s[j]]
+      actid2[k1]<-member_id[i]
+      k1<-k1+1
+      }
+      if(activity$action[s[j]]=='convRequestPersonal')
+      {
+        count_activity3[k2]<-activity$actCount[s[j]]
+      date3[k2]<-activity$actDate[s[j]]
+      actid3[k2]<-member_id[i]
+      k2<-k2+1
+      }
+      if(activity$action[s[j]]=='convRequestGeneral')
+      {
+        count_activity4[k3]<-activity$actCount[s[j]]
+      date4[k3]<-activity$actDate[s[j]]
+      actid4[k3]<-member_id[i]
+      k3<-k3+1
+      }
+      if(activity$action[s[j]]=='forumPost')
+      {
+        count_activity5[k4]<-activity$actCount[s[j]]
+      date5[k4]<-activity$actDate[s[j]]
+      actid5[k4]<-member_id[i]
+      k4<-k4+1
+      }
+      if(activity$action[s[j]]=='helpGuideView')
+      {
+        count_activity6[k5]<-activity$actCount[s[j]]
+        date6[k5]<-activity$actDate[s[j]]
+        actid6[k5]<-member_id[i]
+        k5<-k5+1
+      }
+      if(activity$action[s[j]]=='forumView')
+      {
+        count_activity7[k6]<-activity$actCount[s[j]]
+        date7[k6]<-activity$actDate[s[j]]
+        actid7[k6]<-member_id[i]
+        k6<-k6+1
+      }
+      if (activity$action[s[j]]=='pageviewWeb')
+      {
+        count_activity8[k7]<-activity$actCount[s[j]]
+      date8[k7]<-activity$actDate[s[j]]
+      actid8[k7]<-member_id[i]
+      k7<-k7+1
+    }
+      if(activity$action[s[j]]=='pageviewApp')
+      {
+        count_activity9[k8]<-activity$actCount[s[j]]
+      date9[k8]<-activity$actDate[s[j]]
+      actid9[k8]<-member_id[i]
+      k8<-k8+1
+    }
+  }
+    
+}
+
+tmp_id<-0
+act1<-0
+
